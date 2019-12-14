@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="#eeeeee"
+    tools:context=".Fragments.ChatsFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycle_view">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</RelativeLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#808080"-->
+    <!--tools:context=".Fragments.ChatsFragment">-->
+
+    <!--&lt;!&ndash;<androidx.recyclerview.widget.RecyclerView&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/recycle_view">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;</androidx.recyclerview.widget.RecyclerView>-->
+    <!---->
+
+
+
+
+<!--</RelativeLayout>-->

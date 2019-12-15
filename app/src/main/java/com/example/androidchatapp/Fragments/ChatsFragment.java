@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.androidchatapp.Adapter.UserAdapter;
-import com.example.androidchatapp.Model.Chat;
 import com.example.androidchatapp.Model.Chatlist;
 import com.example.androidchatapp.Model.User;
 import com.example.androidchatapp.R;

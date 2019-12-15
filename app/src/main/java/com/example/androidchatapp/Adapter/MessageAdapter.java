@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
 import com.example.androidchatapp.Model.Chat;
 
 import com.example.androidchatapp.R;
@@ -90,7 +89,7 @@ public class MessageAdapter  extends RecyclerView.Adapter<MessageAdapter.ViewHol
 
             show_message = itemView.findViewById(R.id.show_message);
             profile_image = itemView.findViewById(R.id.profile_image);
-            txt_seen = itemView.findViewById(R.id.txt_send);
+            txt_seen = itemView.findViewById(R.id.txt_seen);
         }
     }
 

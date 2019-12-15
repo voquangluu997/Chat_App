@@ -51,9 +51,9 @@ import static android.app.Activity.RESULT_OK;
 public class ProfileFragment extends Fragment {
 
     CircleImageView image_profile;
-    Button btn_changeImage, btn_update;
+    Button btn_changeImage;
     TextView username;
-    EditText about_me;
+
 
     StorageReference storageReference;
     private static final int IMAGE_REQUEST = 1;
@@ -71,8 +71,7 @@ public class ProfileFragment extends Fragment {
         image_profile = view.findViewById(R.id.profile_image);
         btn_changeImage = view.findViewById(R.id.btn_change);
         username = view.findViewById(R.id.user_name);
-        about_me = view.findViewById(R.id.about_me);
-        btn_update = view.findViewById(R.id.btn_update);
+
 
         storageReference = FirebaseStorage.getInstance().getReference("Upload");
 
@@ -85,7 +84,6 @@ public class ProfileFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 username.setText(user.getUsername());
-                about_me.setText(user.getAbout_me());
 
                 if (user.getImageURL().equals("default")) {
                     image_profile.setImageResource(R.mipmap.ic_launcher);
@@ -104,16 +102,6 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        btn_update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
-                DatabaseReference firebaseDatabase = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
-                firebaseDatabase.child("about_me").setValue(about_me.getText().toString());
-
-
-            }
-        });
 
         btn_changeImage.setOnClickListener(new View.OnClickListener() {
             @Override

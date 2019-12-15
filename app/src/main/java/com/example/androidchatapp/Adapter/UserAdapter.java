@@ -78,7 +78,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             }
         });
 
-        holder.about_me.setText(user.getAbout_me());
     }
 
 
@@ -89,7 +88,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView username,about_me;
+        public TextView username;
         public ImageView profile_image;
         public ImageView img_on;
         public ImageView img_off;
@@ -101,7 +100,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             profile_image = itemView.findViewById(R.id.profile_image);
             img_on = itemView.findViewById(R.id.img_on);
             img_off = itemView.findViewById(R.id.img_off);
-            about_me = itemView.findViewById(R.id.tv_about_me);
 
         }
     }

@@ -44,10 +44,14 @@ public class UsersFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_users, container, false);
-        search_users = view.findViewById(R.id.search_users);
+
         recyclerView = view.findViewById(R.id.recycle_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        mUsers = new ArrayList<>();
+        readUsers();
+        search_users = view.findViewById(R.id.search_users);
 
         search_users.addTextChangedListener(new TextWatcher() {
             @Override
@@ -67,8 +71,6 @@ public class UsersFragment extends Fragment {
             }
         });
 
-        mUsers = new ArrayList<>();
-        readUsers();
 
         return view;
     }

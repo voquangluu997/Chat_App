@@ -29,14 +29,14 @@
             android:textSize="15sp"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="about_me"
-            android:id="@+id/tv_about_me"
-            android:layout_below="@+id/username"
-            android:textSize="12sp"
-            />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="about_me"-->
+            <!--android:id="@+id/tv_about_me"-->
+            <!--android:layout_below="@+id/username"-->
+            <!--android:textSize="12sp"-->
+            <!--/>-->
 
 
     </RelativeLayout>
@@ -46,20 +46,23 @@
         android:id="@+id/img_on"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_toLeftOf="@+id/relative_layout"
-        android:layout_below="@+id/relative_layout"
+        android:layout_toRightOf="@+id/profile_image"
+        android:layout_alignBottom="@+id/profile_image"
+        android:layout_marginLeft="-12dp"
         android:src="@mipmap/ic_launcher"
         app:border_color="#8CDA36"
         app:border_width="5dp"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:id="@+id/img_off"
         android:src="@mipmap/ic_launcher"
-        android:layout_toLeftOf="@+id/relative_layout"
-        android:layout_below="@+id/relative_layout"
+        android:layout_toRightOf="@+id/profile_image"
+        android:layout_alignBottom="@+id/profile_image"
+        android:layout_marginLeft="-12dp"
         app:border_width="5dp"
         app:border_color="#C3C4C2"
         android:visibility="gone"

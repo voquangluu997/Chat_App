@@ -62,9 +62,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
         }
 
-        if (isChat){
+        if (isChat) {
             lastMessage(user.getId(), holder.last_msg);
-        }else{
+        } else {
             holder.last_msg.setVisibility(View.GONE);
         }
 
@@ -132,18 +132,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Chat chat = snapshot.getValue(Chat.class);
-                    if (chat.getReceiver().equals(firebaseUser.getUid()) && chat.getSender().equals(userid)||
-                            chat.getReceiver().equals(userid) && chat.getSender().equals(firebaseUser.getUid())){
-                        theLastMessage=chat.getMessage();
+                    if (chat.getReceiver().equals(firebaseUser.getUid()) && chat.getSender().equals(userid) ||
+                            chat.getReceiver().equals(userid) && chat.getSender().equals(firebaseUser.getUid())) {
+                        theLastMessage = chat.getMessage();
                     }
                 }
-                switch (theLastMessage){
+                switch (theLastMessage) {
                     case "default":
                         last_msg.setText("No Message");
                         break;
-                        default:
-                            last_msg.setText(theLastMessage);
-                            break;
+                    default:
+                        last_msg.setText(theLastMessage);
+                        break;
                 }
 
                 theLastMessage = "default";

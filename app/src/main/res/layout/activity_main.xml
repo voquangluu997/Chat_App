@@ -28,12 +28,12 @@
                 android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
                 android:layout_marginLeft="25dp"
                 android:text="username"
                 android:textColor="#fff"
-                android:textStyle="bold"
                 android:textSize="20sp"
-                android:layout_marginStart="25dp"/>
+                android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.tabs.TabLayout
@@ -41,10 +41,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
-            app:tabIndicatorColor="#fff"
-            app:tabSelectedTextColor="#fff"
-            app:tabMaxWidth="0dp"
             app:tabGravity="fill"
+            app:tabIndicatorColor="#fff"
+            app:tabMaxWidth="0dp"
+            app:tabSelectedTextColor="#fff"
             app:tabTextColor="#fff" />
 
     </com.google.android.material.appbar.AppBarLayout>

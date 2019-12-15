@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -13,41 +13,31 @@
 
 
     <RelativeLayout
+        android:id="@+id/relative_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/relative_layout"
-        android:layout_toRightOf="@+id/profile_image"
-        android:layout_marginLeft="5dp"
         android:layout_centerVertical="true"
-        >
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/profile_image">
 
         <TextView
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/username"
             android:text="username"
-            android:textSize="15sp"
-            />
+            android:textSize="15sp" />
+
         <TextView
+            android:id="@+id/last_msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/username"
-            android:id="@+id/last_msg"
+            android:maxLines="1"
             android:text="last msg"
             android:textColor="@color/colorPrimaryDark"
-            android:maxLines="1"
 
 
             />
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="about_me"-->
-            <!--android:id="@+id/tv_about_me"-->
-            <!--android:layout_below="@+id/username"-->
-            <!--android:textSize="12sp"-->
-            <!--/>-->
 
 
     </RelativeLayout>
@@ -57,26 +47,25 @@
         android:id="@+id/img_on"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_toRightOf="@+id/profile_image"
         android:layout_alignBottom="@+id/profile_image"
         android:layout_marginLeft="-12dp"
+        android:layout_toRightOf="@+id/profile_image"
         android:src="@mipmap/ic_launcher"
-        app:border_color="#8CDA36"
-        app:border_width="5dp"
         android:visibility="gone"
-        />
+        app:border_color="#8CDA36"
+        app:border_width="5dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_off"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:id="@+id/img_off"
-        android:src="@mipmap/ic_launcher"
-        android:layout_toRightOf="@+id/profile_image"
         android:layout_alignBottom="@+id/profile_image"
         android:layout_marginLeft="-12dp"
-        app:border_width="5dp"
-        app:border_color="#C3C4C2"
+        android:layout_toRightOf="@+id/profile_image"
+        android:src="@mipmap/ic_launcher"
         android:visibility="gone"
+        app:border_color="#C3C4C2"
+        app:border_width="5dp"
 
         />
 

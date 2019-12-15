@@ -9,7 +9,6 @@ public class User {
     private String search;
 
 
-
     public String getStatus() {
         return status;
     }
@@ -21,11 +20,11 @@ public class User {
     public User() {
     }
 
-    public User(String id, String username, String imageURL,String status,String search) {
+    public User(String id, String username, String imageURL, String status, String search) {
         this.id = id;
         this.username = username;
         this.imageURL = imageURL;
-        this.status= status;
+        this.status = status;
         this.search = search;
     }
 

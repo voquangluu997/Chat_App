@@ -6,8 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.androidchatapp.Model.Chat;
 
 import com.example.androidchatapp.R;
@@ -17,9 +19,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class MessageAdapter  extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
-    public static final int MSG_TYPE_LEFT=0;
-    public static final int MSG_TYPE_RIGHT=1;
+public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
+    public static final int MSG_TYPE_LEFT = 0;
+    public static final int MSG_TYPE_RIGHT = 1;
 
     private Context mContext;
     private List<Chat> mChat;
@@ -28,19 +30,19 @@ public class MessageAdapter  extends RecyclerView.Adapter<MessageAdapter.ViewHol
     FirebaseUser fuser;
 
 
-    public MessageAdapter(Context mContext, List<Chat> mChat,String imageurl) {
+    public MessageAdapter(Context mContext, List<Chat> mChat, String imageurl) {
         this.mContext = mContext;
         this.mChat = mChat;
-        this.imageurl=imageurl;
+        this.imageurl = imageurl;
     }
 
     @NonNull
     @Override
     public MessageAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (viewType==MSG_TYPE_RIGHT){
+        if (viewType == MSG_TYPE_RIGHT) {
             View view = LayoutInflater.from(mContext).inflate(R.layout.chat_item_right, parent, false);
             return new MessageAdapter.ViewHolder(view);
-        }else {
+        } else {
             View view = LayoutInflater.from(mContext).inflate(R.layout.chat_item_left, parent, false);
             return new MessageAdapter.ViewHolder(view);
         }
@@ -52,21 +54,19 @@ public class MessageAdapter  extends RecyclerView.Adapter<MessageAdapter.ViewHol
         Chat chat = mChat.get(position);
         holder.show_message.setText(chat.getMessage());
 
-        if(imageurl.equals("default")){
+        if (imageurl.equals("default")) {
             holder.profile_image.setImageResource(R.mipmap.ic_launcher);
-        }else {
+        } else {
             Picasso.with(mContext).load(imageurl).into(holder.profile_image);
         }
 
-        if(position== mChat.size()-1){
-            if (chat.isIsseen()){
+        if (position == mChat.size() - 1) {
+            if (chat.isIsseen()) {
                 holder.txt_seen.setText("Seen");
-            }
-            else{
+            } else {
                 holder.txt_seen.setText("sent");
             }
-        }
-        else{
+        } else {
             holder.txt_seen.setVisibility(View.GONE);
         }
 
@@ -97,9 +97,9 @@ public class MessageAdapter  extends RecyclerView.Adapter<MessageAdapter.ViewHol
     public int getItemViewType(int position) {
 
         fuser = FirebaseAuth.getInstance().getCurrentUser();
-        if (mChat.get(position).getSender().equals(fuser.getUid())){
+        if (mChat.get(position).getSender().equals(fuser.getUid())) {
             return MSG_TYPE_RIGHT;
-        }else {
+        } else {
             return MSG_TYPE_LEFT;
         }
     }

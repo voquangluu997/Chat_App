@@ -40,6 +40,7 @@ public class Chat {
     public void setMessage(String message) {
         this.message = message;
     }
+
     public boolean isIsseen() {
         return isseen;
     }

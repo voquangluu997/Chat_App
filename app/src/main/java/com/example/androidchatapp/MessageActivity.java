@@ -163,32 +163,32 @@ public class MessageActivity extends AppCompatActivity {
 
         reference.child("Chats").push().setValue(hashMap);
 
-         final String userid=intent.getStringExtra("userid");//
-         final DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("ChatList").child(fuser.getUid()).child(userid);
-
-        chatRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(!dataSnapshot.exists()){
-                    chatRef.child("id").setValue(userid);
-                }
-            }
-
-
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-        final DatabaseReference chatRef1 = FirebaseDatabase.getInstance().getReference("Chatlist")
+//         final String userid=intent.getStringExtra("userid");//
+//         final DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("ChatList").child(fuser.getUid()).child(userid);
+//
+//        chatRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                if(!dataSnapshot.exists()){
+//                    chatRef.child("id").setValue(userid);
+//                }
+//            }
+//
+//
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+        final DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("Chatlist")
                 .child(receiver).child(sender);
-        chatRef1.addListenerForSingleValueEvent(new ValueEventListener() {
+        chatRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(!dataSnapshot.exists())
                 {
-                    chatRef1.child("id").setValue(sender);
+                    chatRef.child("id").setValue(sender);
                 }
             }
 
@@ -197,7 +197,6 @@ public class MessageActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 
